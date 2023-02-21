@@ -4,7 +4,20 @@ import numpy as np
 
 
 class Body:
+    '''
+    Physical Object, that owns passed properties in form of Arith Objects.
+    Properties can be passed on creation as list,
+    or later added with addProperty()
+
+    it can also save differnetial Equations (Objects of diffEq Class), with these
+    you can have all what you need to calculate the properties changes over time right at hand if wished.
+    '''
     def __init__(self, name, properties: list[Arith] = []):
+        '''
+        @params
+            name - str: requiered
+            properties - list: not requiered
+        '''
         self.name = name
         self.props = {}
         self.differentials = [] #diffEq's
@@ -15,7 +28,7 @@ class Body:
                 usednames.append(a.name)
                 self.props[a.name] = a
 
-    def addPropertie(self, propertie: Arith, name=""):
+    def addProperty(self, propertie: Arith, name=""):
         if not name:
             name = propertie.name
         assert name
