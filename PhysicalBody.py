@@ -12,7 +12,12 @@ class Body:
     it can also save differnetial Equations (Objects of diffEq Class), with these
     you can have all what you need to calculate the properties changes over time right at hand if wished.
     '''
-    def __init__(self, name, properties: list[Arith] = []):
+
+    params = []
+    units = []
+    timeUnit = ''
+
+    def __init__(self, name:str, properties: list[Arith] = []):
         '''
         @params
             name - str: requiered

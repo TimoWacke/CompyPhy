@@ -25,3 +25,6 @@ class diffEq:
         assert len(self.target.children) == 0
         self.target.value += self.result * dt
 
+    def __str__(self):
+        return f'{self.target} <- {self.term}'
+

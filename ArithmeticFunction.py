@@ -10,13 +10,15 @@ class Arith:
         self.op = op
 
     def __str__(self):
-        return f'{self.value:.3f}'
-
-    def __repr__(self):
-        return f'{self.value:.3f}'
+        if self.name:
+            return f'{self.name}: {self.value:.3f}'
+        return f'({self.value:.3f})'
 
     def __add__(self, other):
         return Arith(self.value + other.value, children=(self, other), op=self.__add__)
+
+    def __sub__(self, other):
+        return Arith(self.value - other.value, children=(self, other), op=self.__sub__)
 
     def __mul__(self, other):
         return Arith(self.value * other.value, children=(self, other), op=self.__mul__)
