@@ -1,15 +1,15 @@
-from ArithmeticFunction import Arith
+from Term import Term
 
 class diffEq:
 
     '''
     Differential Equation
     '''
-    def __init__(self, target:Arith, term: Arith):
+    def __init__(self, target:Term, term: Term):
         '''
             @params:
-            target - Arith Object, whose d/dt equals term
-            term - Arith Object
+            target - Term Object, whose d/dt equals term
+            term - Term Object
         '''
         self.target = target
         self.term = term

@@ -1,11 +1,11 @@
-from ArithmeticFunction import Arith
+from Term import Term
 from DifferentialEquation import diffEq
 import numpy as np
 
 
 class Body:
     '''
-    Physical Object, that owns passed properties in form of Arith Objects.
+    Physical Object, that owns passed properties in form of Term Objects.
     Properties can be passed on creation as list,
     or later added with addProperty()
 
@@ -17,7 +17,7 @@ class Body:
     units = []
     timeUnit = ''
 
-    def __init__(self, name:str, properties: list[Arith] = []):
+    def __init__(self, name:str, properties: list[Term] = []):
         '''
         @params
             name - str: requiered
@@ -33,7 +33,7 @@ class Body:
                 usednames.append(a.name)
                 self.props[a.name] = a
 
-    def addProperty(self, propertie: Arith, name=""):
+    def addProperty(self, propertie: Term, name=""):
         if not name:
             name = propertie.name
         assert name
